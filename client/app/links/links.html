@@ -1,4 +1,22 @@
-<div id='container'>
-  <a></a>
-  <!-- Your html here -->
+<div ng-controller='LinksController' id='links'>
+  <nav class='navigation'>
+    <ul>
+      <li><a ng-href="#/links" class='index'>All Links</a></li>
+      <li><a ng-href="#/shorten" class='create'>Shorten</a></li>
+<!--       <li><a href='/logout' class='logout'>Logout</a></li>
+ --> </ul>
+   </nav>
+   <input type='text' ng-model='search'>
+
+   <div ng-repeat="link in data.links" class='link'>
+    <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
+    <div class='title'>{{link.title}}</div>
+    <div class='original'>{{link.url}}</div>
+    <a href='http://localhost:3000/api/links/{{link.code}}'>{{link.base_url}}/{{link.code}}</a>
+  </div>
 </div>
+
+
+
+
+
