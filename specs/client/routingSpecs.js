@@ -30,3 +30,4 @@ describe('Routing', function () {
     expect($route.routes['/shorten'].templateUrl).to.be('app/shorten/shorten.html');
   });
 });
+
